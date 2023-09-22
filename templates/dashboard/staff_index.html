@@ -1,0 +1,60 @@
+
+<div class="container">
+    
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Make Request
+                </div>
+                <div class="card-body">
+                    <form method="POST" style="display: grid; grid-template-columns: auto; margin-bottom: 20px; padding: 20px;">
+                        {% csrf_token%}
+                        {{form}}
+                        
+                        <input class="btn btn-info btn-block" type="submit" value="Make Request">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    Orders Records
+                </div>
+                <div class="card-body">
+                    <table class="table bg-white">
+                        <thead class="bg-info text-white">
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                            {% if order.staff == user%}
+                            <tr>
+                                <td>{{ order.Product.name}}</td>
+                                <td>{{ order.Product.category}}</td>
+                                <td>{{ order.order_quantity}}</td>
+                                <td>{{ order.date}}</td>
+                            </tr>
+                            {% endif %}
+							{% endfor %}
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+

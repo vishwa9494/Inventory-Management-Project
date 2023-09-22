@@ -1,0 +1,53 @@
+
+ <div class="container">
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    Inventory
+                </div>
+                <div class="card-body">
+                    <marquee behavior="" direction="">
+                        <h3 class="my-4"><img src="https://img.freepik.com/free-vector/colorful-welcome-lettering-banner-invite-your-guests-event_1017-43281.jpg?w=2000" width="200px" height="120px" > 🛒🛒 </h3>
+                    </marquee>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    Statistics
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a class="text-decoration-none text-dark" href="{% url 'dashboard-staff'  %}">
+                                <div class="card my-card shadow text-center p-3">
+                                    <h4>Staff <i class="fas fa-users"></i></h4>
+                                    <h3><img src="https://cdn-icons-png.flaticon.com/512/2332/2332039.png" height="60px" width="60px" ></h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a class="text-decoration-none text-dark" href="{% url 'dashboard-product'  %}">
+                                <div class="card my-card shadow text-center p-3">
+                                    <h4>Products <i class="fas fa-box"></i></h4>
+                                    <h3><img src="https://icon-library.com/images/icon-for-product/icon-for-product-0.jpg" width="60px" height="60px"></h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a class="text-decoration-none text-dark" href="{% url 'dashboard-order'  %}">
+                                <div class="card my-card shadow text-center p-3">
+                                    <h4>Orders <i class="fas fa-shipping-fast"></i></h4>
+                                    <h3><img src="https://png.pngtree.com/png-vector/20220401/ourmid/pngtree-fast-truck-delivery-product-icon-template-rounge-png-image_4522888.png" height="60px" width="60px" style="border-radius: 50px;"></h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

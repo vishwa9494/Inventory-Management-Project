@@ -1,0 +1,45 @@
+{% extends 'partials/base.html' %}
+
+{% block title %} Login Page {% endblock %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+ <div class="container">
+    <div class="row my-4">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    Profile Page
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <span class="h4"> Profile Information</span> 
+                            <hr>
+                            <form method="POST" enctype="multipart/form-data" style="display: grid; grid-template-columns: auto; margin-bottom: 20px; padding: 20px;">
+                                {% csrf_token %}
+                                {{user_form}}
+                                {{profile_form}}
+
+                                <input type="submit" class="btn btn-info" style="margin-top: 20px;">
+                            </form>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{%extends 'partials/base.html'%}
+{% block title %} order-page {% endblock %}
+
+{% block content %} 
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+            <div class="border bg-white p-3">
+                <h3>Edit Item</h3>
+                <hr>
+                
+                <form method="POST" style="display: grid; grid-template-columns: auto; margin-bottom: 20px; padding: 20px; " >
+                    {% csrf_token%}
+
+                    {{form}}
+                    <a href="{% url 'dashboard-product'%}" class="btn btn-secondary" style="margin-top: 15px;">cancel</a>
+                    <input type="submit" value="Update" class="btn btn-info" style="margin-top: 15px;">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

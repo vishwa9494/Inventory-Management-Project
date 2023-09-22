@@ -1,0 +1,36 @@
+{%extends 'partials/base.html'%}
+{% block title %} order-page {% endblock %}
+
+{% block content %} 
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+            <div class="border bg-white p-3">
+                <h3>Delete Item</h3>
+                <hr>
+                <div class="alert alert-danger">
+                    <h4>Are You sure you want to delete</h4>
+                </div>
+                <form method="POST">
+                    {% csrf_token%}
+
+                    {{form}}
+                    <a href="{% url 'dashboard-product'%}" class="btn btn-secondary">cancel</a>
+                    <input type="submit" value="confirm" class="btn btn-danger" id="vishwa">
+                    <script>
+                       let speech = new SpeechSynthesisUtterance();
+
+                    
+                        document.querySelector("#vishwa").addEventListener('click',()=>{
+                            
+                            speech.text =  "Deleted successfully";
+                            window.speechSynthesis.speak(speech);
+                            
+                        });  
+                    </script>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
